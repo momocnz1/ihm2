@@ -97,7 +97,7 @@ Content-Type: application/json
     "content":"อคคตสึ ยูตะหร่อมาก"
 }
 ###
-PUT {{baseUrl}}/comment/2
+PUT {{baseUrl}}/post/1/comment/2
 Content-Type: application/json
 {
     "comment_name":"อคคตสึ ยูตะหร่อมากค่ะ"

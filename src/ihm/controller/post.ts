@@ -26,6 +26,10 @@ export default class PostController {
     getByparent(@Param('parent') parent: number): Promise<PostEntity> {
         return this.postService.findOne(parent)
     }
+    @Get(':comment')
+    getcomment(@Req() request: Request): Promise<PostEntity[]> {
+        return this.postService.findAll();
+    }
 
     @Post(':id/comment')
     async addComment(@Request() req, @Param('id') id : number,@Body() comment: any ){
