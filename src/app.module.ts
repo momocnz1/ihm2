@@ -1,12 +1,21 @@
 import { Module } from '@nestjs/common';
 import { AppService } from './app.service';
-// import { UserService,AdminService,PostService,CommentService,NotificationService } from './ihm/ihm.service';
 import { TypeOrmModule} from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import PostNotification from './ihm/entities/postNotification';
 import User from './ihm/entities/user';
 import Admin from './ihm/entities/admin';
 import Post from './ihm/entities/post';
+import { UserController } from './ihm/controller/user';
+import { AppController } from './app.controller';
+import UserService from './ihm/service/user';
+import PostController from './ihm/controller/post';
+import AdminController from './ihm/controller/admin';
+import PostNotificationController from './ihm/controller/postNotification';
+import PostNotificationService from './ihm/service/postNotification';
+import PostService from './ihm/service/post';
+import AdminService from './ihm/service/admin';
+
 
 @Module({
   imports: [ConfigModule.forRoot(),
@@ -25,7 +34,7 @@ import Post from './ihm/entities/post';
     }),
     TypeOrmModule.forFeature([User,Admin,PostNotification,Post])
   ],
-  controllers: [],
-  providers: [AppService],
+  controllers: [UserController,AppController,PostNotificationController,PostController,AdminController],
+  providers: [AppService,UserService,PostNotificationService,PostService,AdminService],
 })
 export class AppModule {}

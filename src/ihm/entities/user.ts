@@ -15,8 +15,14 @@ export default class User {
     @Column()
     lname: string;
 
-    @Column()
+    @Column({nullable:true})
+    username: string;
+
+    @Column({nullable:true})
     email: string;
+
+    @Column({nullable:true})
+    password : string;
 
     @Column()
     phone: number;

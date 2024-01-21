@@ -1,23 +1,23 @@
-import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, ManyToMany, JoinTable } from "typeorm"
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, ManyToMany, JoinTable, BaseEntity } from "typeorm"
 import User from "./user";
 
 
 @Entity()
-export default class Post{
+export default class Post extends BaseEntity{
     @PrimaryGeneratedColumn()
     id: number;
 
     @Column()
     content: string;
 
-    @Column()
+    @Column({nullable:true})
     title: string;
 
     @Column()
     date: Date;
 
     @ManyToOne(() => User)
-    users: User;
+    user: User;
 
     @OneToMany(() => Post, (post) => post.parent)
     comments: Post[];
