@@ -8,6 +8,16 @@ import User from '../entities/user';
 //แก้รึป่าว
 @Injectable()
 export default class PostService {
+    getComment(id: number) {
+        return this.postRepository.find({
+            where : {
+                parent : {
+                    id : id
+                }
+            }
+        })
+    }
+
     constructor(
         @InjectRepository(Post)
         private postRepository: Repository<Post>
@@ -28,8 +38,8 @@ export default class PostService {
 
     async addComment(id: number, user : User, commentDTO: any) {
         let p = Post.create({
-            title : "",
-            content : "test",
+        
+            ...commentDTO,
             date: new Date(),
             parent : await this.findOne(id),
             user : user

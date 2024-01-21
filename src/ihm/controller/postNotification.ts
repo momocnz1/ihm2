@@ -1,6 +1,5 @@
-import { Body, Controller, Delete, Get, Param, Post, Put, Req } from '@nestjs/common';
+import { Body, Controller, Delete, Get, Param, Req } from '@nestjs/common';
 import PostNotificationService from '../service/postNotification'
-import { UpdatenotificationDTO } from '../ihm.dto';
 import PostNotification from '../entities/postNotification';
 
 @Controller('postNotification')
@@ -19,10 +18,6 @@ export default class PostNotificationController {
     getByid(@Param('id') id : number) : Promise<PostNotification>{
         return this.postNotificationService.findOne(id)
     }
-  @Put(":id")
-    updateUserById(@Param('id') id: number, @Body() updatenotificationDTO: UpdatenotificationDTO): Promise<PostNotification> {
-      return this.postNotificationService.update(id, updatenotificationDTO);
-  }
   @Delete(":id")
   deleteuserById(@Param('id') id :number) : string{
     this.postNotificationService.DeleteQuryBuilder(id)

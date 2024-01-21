@@ -88,7 +88,7 @@ Content-Type: application/json
 DELETE {{baseUrl}}/post/1
 ###
 
-GET {{baseUrl}}/post/1
+GET {{baseUrl}}/post/1/comment
 ###
 POST {{baseUrl}}/post/1/comment
 Content-Type: application/json
@@ -99,7 +99,8 @@ Content-Type: application/json
 ###
 PUT {{baseUrl}}/post/1/comment/2
 Content-Type: application/json
+
 {
-    "comment_name":"อคคตสึ ยูตะหร่อมากค่ะ"
+    "content":"อคคตสึ ยูตะหร่อมากค่ะ"
 }
 ###

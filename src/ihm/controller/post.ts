@@ -22,14 +22,14 @@ export default class PostController {
     getByid(@Param('id') id: number): Promise<PostEntity> {
         return this.postService.findOne(id)
     }
-    @Get(':parent')
-    getByparent(@Param('parent') parent: number): Promise<PostEntity> {
-        return this.postService.findOne(parent)
+    
+    @Get(':id/comment')
+    async getComments(@Request() req, @Param('id') id : number){
+        
+
+        return this.postService.getComment(id)
     }
-    @Get(':comment')
-    getcomment(@Req() request: Request): Promise<PostEntity[]> {
-        return this.postService.findAll();
-    }
+
 
     @Post(':id/comment')
     async addComment(@Request() req, @Param('id') id : number,@Body() comment: any ){

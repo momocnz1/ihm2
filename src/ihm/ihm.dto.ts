@@ -1,10 +1,6 @@
-import { Type } from 'class-transformer';
-import { IsDate, IsEmail, IsNotEmpty, IsNumber, IsString } from 'class-validator'
+import {  IsEmail, IsNotEmpty, IsNumber, IsString } from 'class-validator'
 
 export class CreateuserDTO{
-    @IsNotEmpty()
-    @IsNumber()
-    id: number;
 
     @IsNotEmpty()
     @IsString()
@@ -25,12 +21,9 @@ export class CreateuserDTO{
     @IsNotEmpty()
     @IsString()
     address: string;
-
+    
 }
 export class UpdateuserDTO{
-    @IsNotEmpty()
-    @IsNumber()
-    id: number;
 
     @IsNotEmpty()
     @IsString()
@@ -54,9 +47,6 @@ export class UpdateuserDTO{
 
 }
 export class CreateadminDTO{
-    @IsNotEmpty()
-    @IsNumber()
-    id: number;
 
     @IsNotEmpty()
     @IsString()
@@ -79,9 +69,6 @@ export class CreateadminDTO{
     address: string;
 }
 export class UpdateadminDTO{
-    @IsNotEmpty()
-    @IsNumber()
-    id: number;
 
     @IsNotEmpty()
     @IsString()
@@ -104,9 +91,6 @@ export class UpdateadminDTO{
     address: string;
 }
 export class CreatepostDTO{
-    @IsNotEmpty()
-    @IsNumber()
-    id: number;
 
     @IsNotEmpty()
     @IsString()
@@ -115,15 +99,9 @@ export class CreatepostDTO{
     @IsNotEmpty()
     @IsString()
     content: string;
-    
-    @Type(()=>Date)
-    @IsDate()
-    date: Date;
+
 }
 export class UpdatepostDTO{
-    @IsNotEmpty()
-    @IsNumber()
-    id: number;
 
     @IsNotEmpty()
     @IsString()
@@ -132,34 +110,16 @@ export class UpdatepostDTO{
     @IsNotEmpty()
     @IsString()
     content: string;
-    
-    @Type(()=>Date)
-    @IsDate()
-    date: Date;
-}
-export class UpdatenotificationDTO{
-    @IsNotEmpty()
-    @IsNumber()
-    id: number;
 
+}
+
+export  class CreateCommentDTO{
     @IsNotEmpty()
     @IsString()
     content: string;
 }
-export class CreateNotificationDTO{
-    @IsNotEmpty()
-    @IsNumber()
-    id: number;
-
+export  class UpdateCommentDTO{
     @IsNotEmpty()
     @IsString()
     content: string;
-
-    @IsNotEmpty()
-    @IsNumber()
-    user_id: number;
-
-    @IsNotEmpty()
-    @IsNumber()
-    admin_id: number;
 }
