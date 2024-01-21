@@ -1,8 +1,5 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, OneToMany, ManyToMany, JoinTable } from "typeorm"
-import Post from "./post";
 import PostNotification from "./postNotification";
-
-
 
 @Entity()
 export default class User {
