@@ -4,7 +4,7 @@ import { Repository } from 'typeorm';
 import Admin from '../entities/admin';
 import { CreateadminDTO, UpdateadminDTO } from '../ihm.dto';
 
-//ฟังก์ชั่นมีปหใมาแก้ด้วย
+//ฟังก์ชั่นมีปหใมาแก้ด้วย 152
 @Injectable()
  export default class AdminService{
    constructor(
